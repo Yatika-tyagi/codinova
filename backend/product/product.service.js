@@ -10,3 +10,11 @@ module.exports = {
 async function getProduct() {
   return await Product.find();
 }
+
+async function saveP(data) {
+  return await Product.save({
+    ...data,
+    sku:'sak89',
+    status: status_codes.ACTIVE_CODE
+  });
+};

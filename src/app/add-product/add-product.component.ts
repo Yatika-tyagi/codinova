@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { posService } from './../pos.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -14,17 +15,26 @@ export class AddProductComponent {
   selectedProductList: [] = [];
   selectedProduct: any = {};
   activeCategory: String = '';
+  productForm: FormGroup;
 
   constructor(private posService: posService) {
 
   }
 
   ngOnInit() {
+    this.productForm = new FormGroup({
+      name: new FormControl(''),
+      quantity: new FormControl(''),
+      price: new FormControl(''),
+      category: new FormControl(''),
+    });
 
   }
 
-  addProdcut(){
-    this.posService.addProduct({});
+  onSubmit(){
+    this.posService.addProduct(this.productForm.value).subscribe(a =>{
+      console.log(success);
+    });
   }
 
 }

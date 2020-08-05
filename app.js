@@ -26,7 +26,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // use JWT auth to secure the api
-app.use(jwt());
+// app.use(jwt());
 
 
 // app.use(
