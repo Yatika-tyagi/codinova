@@ -4,7 +4,7 @@ const ADDED_USER=-2;
 const DELETED_USER=-1;
 
 
-module.exports = { 
+module.exports = {
     ACTIVE_CODE,
     INACTIVE_CODE,
     ADDED_USER,

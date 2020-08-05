@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { posService } from './pos.service';
-import { pipe, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +13,7 @@ export class AppComponent {
   updatingCategory: [];
   selectedProductList: [] = [];
   selectedProduct: any = {};
+  activeCategory: String = '';
 
   constructor(private posService: posService) {
 
@@ -45,7 +45,7 @@ export class AppComponent {
         if(!this.selectedProduct.hasOwnProperty(productId)) {
           this.selectedProduct[productId] = a.filter(b => b.id === productId)[0];
         }
-        this.selectedProductList = Object.values(this.selectedProduct);
+        this.selectedProductList = [...Object.values(this.selectedProduct)];
       }
     )
   }
