@@ -4,7 +4,8 @@ const Product = db.Product;
 const mongoose = require('mongoose');
 
 module.exports = {
-  getProduct
+  getProduct,
+  saveP
 };
 
 async function getProduct() {
@@ -12,9 +13,9 @@ async function getProduct() {
 }
 
 async function saveP(data) {
-  return await Product.save({
+  return await new Product({
     ...data,
-    sku:'sak89',
+    sku:'sak89', // in future can make it dynamic for electronics
     status: status_codes.ACTIVE_CODE
-  });
+  }).save();
 };

@@ -12,16 +12,24 @@ var corsOptions = {
 }
 app.use(cors());
 
-app.use(
-  '/product',
-  require(path.join(__dirname, '/backend/product/product.controller.js'))
-);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
 
+app.use(
+  '/product',
+  require(path.join(__dirname, '/backend/product/product.controller.js'))
+);
+app.use(
+  '/user',
+  require(path.join(__dirname, '/backend/user/user.controller.js'))
+);
+app.use(
+  '/cart',
+  require(path.join(__dirname, '/backend/cart/cart.controller.js'))
+);
 //to load home page
 app.use(express.static(path.join(__dirname, 'dist')));
 

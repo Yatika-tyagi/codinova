@@ -16,4 +16,8 @@ export class posService {
   addProduct(data) {
     return this.http.post('http://localhost:3004/product',data);
   }
+
+  addTocart(data) {
+    return this.http.post('http://localhost:3004/cart/add',data);
+  }
 }

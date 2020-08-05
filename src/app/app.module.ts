@@ -7,11 +7,16 @@ import { AppComponent } from './app.component';
 
 import { AddProductComponent } from './add-product/add-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddProductComponent
+    AddProductComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@ export class AddProductComponent {
   $prodcutListing;
   category = [];
   updatingCategory: [];
-  selectedProductList: [] = [];
+  selectedProductList: any = [];
   selectedProduct: any = {};
   activeCategory: String = '';
   productForm: FormGroup;
@@ -33,8 +33,7 @@ export class AddProductComponent {
 
   onSubmit(){
     this.posService.addProduct(this.productForm.value).subscribe(a =>{
-      console.log(success);
+      console.log(a);
     });
   }
-
 }
