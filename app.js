@@ -9,7 +9,6 @@ const sendMailToUser = require('./backend/_helpers/mail');
 const db = require('./backend/_helpers/db');
 const User = db.User;
 const swaggeruiexpress = require('swagger-ui-express');
-var json2xls = require('json2xls');
 
 // const DataTransfer = require('./csv-datatransfer');  //needs to be uncommented if data from csv file needs to be sent into database
 
@@ -26,8 +25,6 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // use JWT auth to secure the api
 app.use(jwt());
 
-// use Json to excel parser
-app.use(json2xls.middleware);
 
 // api routes
 app.use(
@@ -101,4 +98,3 @@ const server = app.listen(port, function () {
 
 // console.log(csv);
 //  console.log(DataTransfer(csv));    //needs to be uncommented if data from csv file needs to be sent into database
-
