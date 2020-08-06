@@ -4,6 +4,19 @@
 # Database Name
 codinova
 
+# Steps to
+Setps to start application
+
+1 - `npm install`
+2 - `npm start` for fronend
+3 - `npm run node-server` for api
+
+urls
+  - localhost:3000/dashbord POS
+  - localhost:3000/login login
+  - localhost:3000/product to add product
+
+
 #Frontend command 3000: npm start
 #Backend command 3004: npm run node-server
 
